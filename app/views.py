@@ -1,7 +1,22 @@
 """Main views for memex-viewer application"""
 from __future__ import absolute_import, division, print_function
 
+#  IMPORTS
+# =========
+
+# Standard Library
+# ----------------
+
+# Third-party Libraries
+# ---------------------
+
+from flask import (redirect, flash, render_template, request, url_for,
+                   abort)
+from blaze import resource, Data, into
 from pandas import DataFrame
+
+# Local Imports
+# -------------
 
 from . import app, db, text
 from .models import Crawl, MonitorData, Dashboard, Plot
