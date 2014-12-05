@@ -59,10 +59,5 @@ class Harvest(PlotManager):
 
         p.legend.orientation = "top_left"
 
-        # Save ColumnDataSource model id to database model 
-        self.plot.source_id = self.source._id
-        db.session.flush()
-        db.session.commit()
-
         cursession().store_document(curdoc())
-        return autoload_server(p, cursession())
+        return autoload_server(p, cursession()), self.source._id

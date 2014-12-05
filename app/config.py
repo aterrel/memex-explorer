@@ -36,4 +36,4 @@ DEFAULT_MAIL_SENDER = MAIL_USERNAME
 # Crawler
 # -----
 
-CRAWLER_PATH = '/Users/cdoig/work/memexcrawler/focused_crawler'
+CRAWLER_PATH = '/Users/kdodia/dev/memexcrawler/focused_crawler'

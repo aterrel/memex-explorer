@@ -86,13 +86,5 @@ class Domain(PlotManager):
 
         cursession().store_document(curdoc())
         autoload_tag = autoload_server(p, cursession())
-
-        # Save ColumnDataSource model id to database model 
-        self.plot.source_id = self.source._id
-
-        # Save autoload_server tag as well
-        self.plot.autoload_tag = autoload_tag
-        db.session.flush()
-        db.session.commit()
         
-        return autoload_server(p, cursession())
+        return autoload_server(p, cursession()), self.source._id
